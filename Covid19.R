@@ -21,6 +21,7 @@ cov_br_rec <- GET(url = "https://api.covid19api.com/country/brazil/status/recove
   fromJSON
 
 # Consultando dados de nº de mortes
+
 cov_br_dt <- GET(url = "https://api.covid19api.com/country/brazil/status/deaths",
                  encode = 'json') %>%
   content %>%
@@ -28,9 +29,11 @@ cov_br_dt <- GET(url = "https://api.covid19api.com/country/brazil/status/deaths"
   fromJSON
 
 # Converte as datas
+
 datas <- cov_br_conf$Date %>% unlist %>% as.Date()
 
 # Cria um data.frame unificado
+
 cov_br <- data.frame(
   
   dia = datas,
@@ -41,5 +44,5 @@ cov_br <- data.frame(
 )
 
 # Remove 35 linhas com dplyr
-cov_br <- cov_br %>% slice(36:n())
 
+cov_br <- cov_br %>% slice(36:n())
