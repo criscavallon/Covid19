@@ -3,6 +3,7 @@ library(jsonlite) # Manipulacao de .json
 library(ggplot2)  # graficos
 library(plotly)   # graficos interativos
 library(dplyr)
+library(hrbrthemes)
 
 # Consultando dados de nº de casos confirmados
 
@@ -51,17 +52,21 @@ cov_br <- cov_br %>% slice(36:n())
 
 graph_conf <- cov_br %>%
   ggplot(aes(x=dia)) +
-  geom_area( aes(y = confirmados), fill  = "#f25a5a", alpha = 0.4) +
-  geom_line( aes(y = confirmados), color = "#f25a5a", size = 1) +
-  geom_point(aes(y = confirmados), color = "#f25a5a", size = 2)
+  geom_area( aes(y = confirmados), fill  = "#93c9ff", alpha = 0.4) +
+  geom_line( aes(y = confirmados), color = "#93c9ff", size = 1) +
+ # geom_point(aes(y = confirmados), color = "#93c9ff", size = 2) +
+  theme_modern_rc()
+ #graph_conf
 
 # Grafico do nº de mortes
 
 graph_mort <- cov_br %>%
   ggplot(aes(x=dia)) +
-  geom_area( aes(y = mortes), fill  = "#f28f5a", alpha = 0.4) +
-  geom_line( aes(y = mortes), color = "#f28f5a", size = 1) +
-  geom_point(aes(y = mortes), color = "#f28f5a", size = 2)
+  geom_area( aes(y = mortes), fill  = "#f25a5a", alpha = 0.4) +
+  geom_line( aes(y = mortes), color = "#f25a5a", size = 1) +
+ # geom_point(aes(y = mortes), color = "#f2a55a", size = 2) +
+  theme_modern_rc()
+#graph_mort
 
 # Grafico do nº de recuperados
 
@@ -69,4 +74,10 @@ graph_rec <- cov_br %>%
   ggplot(aes(x=dia)) +
   geom_area( aes(y = recuperados), fill  = "#69b37b", alpha = 0.4) +
   geom_line( aes(y = recuperados), color = "#69b37b", size = 1) +
-  geom_point(aes(y = recuperados), color = "#69b37b", size = 2)
+ # geom_point(aes(y = recuperados), color = "#69b37b", size = 1) + 
+  theme_modern_rc()
+
+#graph_rec
+
+##########
+
