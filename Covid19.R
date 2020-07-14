@@ -46,3 +46,27 @@ cov_br <- data.frame(
 # Remove 35 linhas com dplyr
 
 cov_br <- cov_br %>% slice(36:n())
+
+# Grafico do nº de casos confirmados
+
+graph_conf <- cov_br %>%
+  ggplot(aes(x=dia)) +
+  geom_area( aes(y = confirmados), fill  = "#f25a5a", alpha = 0.4) +
+  geom_line( aes(y = confirmados), color = "#f25a5a", size = 1) +
+  geom_point(aes(y = confirmados), color = "#f25a5a", size = 2)
+
+# Grafico do nº de mortes
+
+graph_mort <- cov_br %>%
+  ggplot(aes(x=dia)) +
+  geom_area( aes(y = mortes), fill  = "#f28f5a", alpha = 0.4) +
+  geom_line( aes(y = mortes), color = "#f28f5a", size = 1) +
+  geom_point(aes(y = mortes), color = "#f28f5a", size = 2)
+
+# Grafico do nº de recuperados
+
+graph_rec <- cov_br %>%
+  ggplot(aes(x=dia)) +
+  geom_area( aes(y = recuperados), fill  = "#69b37b", alpha = 0.4) +
+  geom_line( aes(y = recuperados), color = "#69b37b", size = 1) +
+  geom_point(aes(y = recuperados), color = "#69b37b", size = 2)
