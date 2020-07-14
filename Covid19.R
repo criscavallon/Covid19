@@ -5,6 +5,7 @@ library(plotly)   # graficos interativos
 library(dplyr)
 
 # Consultando dados de nº de casos confirmados
+
 cov_br_conf <- GET(url = "https://api.covid19api.com/country/brazil/status/confirmed",
                    encode = 'json') %>%
   content %>%
@@ -12,6 +13,7 @@ cov_br_conf <- GET(url = "https://api.covid19api.com/country/brazil/status/confi
   fromJSON
 
 # Consultando dados de nº de recuperados
+
 cov_br_rec <- GET(url = "https://api.covid19api.com/country/brazil/status/recovered",
                   encode = 'json') %>%
   content %>%
