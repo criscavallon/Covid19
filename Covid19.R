@@ -52,11 +52,11 @@ cov_br <- cov_br %>% slice(36:n())
 
 graph_conf <- cov_br %>%
   ggplot(aes(x=dia)) +
-  geom_area( aes(y = confirmados), fill  = "#93c9ff", alpha = 0.4) +
-  geom_line( aes(y = confirmados), color = "#93c9ff", size = 1) +
+  geom_area( aes(y = confirmados/1000), fill  = "#93c9ff", alpha = 0.4) +
+  geom_line( aes(y = confirmados/1000), color = "#93c9ff", size = 1) +
  # geom_point(aes(y = confirmados), color = "#93c9ff", size = 2) +
   theme_modern_rc()
- #graph_conf
+# graph_conf
 
 # Grafico do nº de mortes
 
@@ -72,12 +72,12 @@ graph_mort <- cov_br %>%
 
 graph_rec <- cov_br %>%
   ggplot(aes(x=dia)) +
-  geom_area( aes(y = recuperados), fill  = "#69b37b", alpha = 0.4) +
-  geom_line( aes(y = recuperados), color = "#69b37b", size = 1) +
+  geom_area( aes(y = recuperados/1000), fill  = "#69b37b", alpha = 0.4) +
+  geom_line( aes(y = recuperados/1000), color = "#69b37b", size = 1) +
  # geom_point(aes(y = recuperados), color = "#69b37b", size = 1) + 
   theme_modern_rc()
 
-#graph_rec
+# graph_rec
 
 ##########
 
