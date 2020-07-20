@@ -89,6 +89,11 @@ cov_wrl_tt <- GET(url = "https://api.covid19api.com/world/total",
 
 cov_wrl_tt
 
+# Percentual de mortos
+
+perc_mort <- (cov_wrl_tt$TotalDeaths / cov_wrl_tt$TotalConfirmed)*100
+
+perc_mort
 
 # Total de novos casos por país
 cov_coun_new <- GET(url = "https://api.covid19api.com/summary",
