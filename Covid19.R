@@ -79,5 +79,25 @@ graph_rec <- cov_br %>%
 
 # graph_rec
 
-##########
+
+# Total de casos no mundo
+cov_wrl_tt <- GET(url = "https://api.covid19api.com/world/total",
+                  encode = 'json') %>%
+  content %>%
+  toJSON %>%
+  fromJSON
+
+cov_wrl_tt
+
+
+# Total de novos casos por país
+cov_coun_new <- GET(url = "https://api.covid19api.com/summary",
+                    encode = 'json') %>%
+  content %>%
+  toJSON %>%
+  fromJSON
+
+cov_coun_new
+
+
 
