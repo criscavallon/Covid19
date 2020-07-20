@@ -44,6 +44,7 @@ cov_br <- data.frame(
   
 )
 
+cov_br
 # Remove 35 linhas com dplyr
 
 cov_br <- cov_br %>% slice(36:n())
@@ -91,7 +92,7 @@ cov_wrl_tt
 
 # Percentual de mortos
 
-perc_mort <- (cov_wrl_tt$TotalDeaths / cov_wrl_tt$TotalConfirmed)*100
+perc_mort <- (cov_wrl_tt$TotalDeaths / cov_wrl_tt$TotalConfirmed)*100 
 
 perc_mort
 
@@ -104,5 +105,6 @@ cov_coun_new <- GET(url = "https://api.covid19api.com/summary",
 
 cov_coun_new
 
-
+cov_coun_br <- ((cov_br$mortes / cov_br$confirmados)*100)
+cov_coun_br
 
